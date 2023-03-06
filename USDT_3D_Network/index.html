@@ -1,0 +1,16 @@
+<div id="graph-section">
+  <h2>One day in Ethereum blockchain with USDT Token</h2>
+  <div id="graph"></div>
+</div>
+
+<script src="https://unpkg.com/3d-force-graph"></script>
+<script>
+  fetch('data.json')
+    .then(res => res.json())
+    .then(data => {
+      const graph = ForceGraph3D()(document.getElementById('graph'))
+        .graphData(data)
+        .nodeRelSize(5)
+        .nodeResolution(10)
+    })
+</script>
